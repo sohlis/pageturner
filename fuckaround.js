@@ -33,13 +33,6 @@ var storyObject = {
 }
 
 
-/*eval("console.log(storyObject.y.yn.ynstory)"); */
-
-//var ynCounter = 'y';
-/*ynCounter = ynCounter + '.yy';*/
-/*console.log(eval('storyObject.' + ynCounter + '.story'));
-console.log('storyObject.' + ynCounter + '.story');*/
-
 String.prototype.repeat = function( num )
 {
     return new Array( num + 1 ).join( this );
@@ -47,30 +40,30 @@ String.prototype.repeat = function( num )
 
 
 function yesClick() {
-    var yInserter = 'y'; //initialized actual y insertion
-    var yCounter = 0 //counts the number of time y has been clicked
-    var yPast = '';
+  var yInserter = 'y'; //initialized actual y insertion
+  var yCounter = 0 //counts the number of time y has been clicked
+  var yPast = '';
 
   $( "#right" ).click(function() {
       yCounter = yCounter + 1; //add a click
       var yIs = yInserter.repeat(yCounter); //appends another 'y' for every click, using above '.repeat' function
       yPast = yPast + '.' + yIs;
       console.log(eval('storyObject' + yPast + '.story'));
-    var yDeliverable = eval('storyObject' + yPast + '.story');
-       $( "div.question" ).replaceWith( '<div class="question">'+ yDeliverable + '</div>' );
+      var yDeliverable = eval('storyObject' + yPast + '.story');
+      $( "div.question" ).replaceWith( '<div class="question">'+ yDeliverable + '</div>' );
   });
 
-    var nInserter = 'n'; //initialized actual y insertion
-    var nCounter = 0 //counts the number of time y has been clicked
-    var nPast = '';
+  var nInserter = 'n'; //initialized actual y insertion
+  var nCounter = 0 //counts the number of time y has been clicked
+  var nPast = '';
 
   $( "#left" ).click(function() {
       nCounter = nCounter + 1; //add a click
-      var nIs = nInserter.repeat(nCounter); //appends another 'x' for every click, using above '.repeat' function
+      var nIs = nInserter.repeat(nCounter); //appends another 'n' for every click, using above '.repeat' function
       nPast = nPast + '.' + nIs;
       console.log(eval('storyObject' + nPast + '.story'));
-    var nDeliverable = eval('storyObject' +nPast + '.story');
-       $( "div.question" ).replaceWith( '<div class="question">'+ nDeliverable + '</div>' );
+      var nDeliverable = eval('storyObject' +nPast + '.story');
+      $( "div.question" ).replaceWith( '<div class="question">'+ nDeliverable + '</div>' );
   });
 }
 
